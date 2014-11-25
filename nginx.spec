@@ -7,9 +7,9 @@
 %global  nginx_datadir       %{_datadir}/nginx
 %global  nginx_webroot       %{nginx_datadir}/html
 
-Name:              nginx-xunyou
+Name:              nginx
 Version:           1.0.15
-Release:           10%{?dist}
+Release:           10.xunyou%{?dist}
 
 Summary:           A high performance web server and reverse proxy server
 Group:             System Environment/Daemons
@@ -174,7 +174,7 @@ install -p -m 0644 %{SOURCE101} %{SOURCE102} \
 install -p -m 0644 %{SOURCE103} %{SOURCE104} \
     %{buildroot}%{nginx_webroot}
 
-install -p -D -m 0644 %{_builddir}/nginx-xunyou-%{version}/man/nginx.8 \
+install -p -D -m 0644 %{_builddir}/nginx-%{version}/man/nginx.8 \
     %{buildroot}%{_mandir}/man8/nginx.8
 
 install -p -D -m644 %{SOURCE200} \
