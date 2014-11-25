@@ -50,7 +50,7 @@ BuildRequires:     pcre-devel
 BuildRequires:     perl-devel
 BuildRequires:     perl(ExtUtils::Embed)
 BuildRequires:     zlib-devel
-BuildRequires:     lua-devel
+BuildRequires:     luajit-devel
 
 Requires:          nginx-filesystem = %{version}-%{release}
 Requires:          GeoIP
@@ -94,6 +94,8 @@ directories.
 # and the standard configure options cause the nginx configure script
 # to error out.  This is is also the reason for the DESTDIR environment
 # variable.
+export LUAJIT_INC=/usr/include/luajit-2.1
+export LUAJIT_LIB=/usr/lib64
 export DESTDIR=%{buildroot}
 ./configure \
     --prefix=%{nginx_datadir} \
